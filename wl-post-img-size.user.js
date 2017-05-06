@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        wl-post-img-size
 // @namespace   wl-post-img-size
-// @description Adds a menu to transform text in any text inputs.
-// @version     0.1.0
+// @description Sets maximum image width in WL posts to 100% of the post width.
+// @version     0.1.1
 // @include     http://www.warlight.net/*
 // @include     https://www.warlight.net/*
 // @grant       none
