@@ -2,7 +2,7 @@
 // @name        wl-post-img-size
 // @namespace   wl-post-img-size
 // @description Sets maximum image width in WL posts to 100% of the post width.
-// @version     0.1.1
+// @version     0.1.2
 // @include     http://www.warlight.net/*
 // @include     https://www.warlight.net/*
 // @grant       none
@@ -11,7 +11,5 @@
 
 'use strict';
 
-[...document.getElementsByTagName('img')]
-	.filter(img => img.parentElement.tagName === 'DIV' &&
-	               img.parentElement.id.startsWith('PostForDisplay_'))
+[...document.querySelectorAll('div[id^=PostForDisplay_] > img')]
 	.forEach(img => img.style.maxWidth = '100%');
