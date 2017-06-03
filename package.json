@@ -1,6 +1,6 @@
 {
 	"name": "wl-post-img-size",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "Sets maximum image width in WL posts to 100% of the post width.",
 	"main": "wl-post-img-size.user.js",
 	"scripts": {
