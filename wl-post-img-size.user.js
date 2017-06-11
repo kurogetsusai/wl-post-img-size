@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name        wl-post-img-size
+// @name        WL Post Image Size
 // @namespace   wl-post-img-size
 // @description Sets maximum image width in WL posts to 100% of the post width.
-// @version     0.2.2
+// @version     1.0.0
 // @include     http://www.warlight.net/*
 // @include     https://www.warlight.net/*
 // @grant       none
@@ -21,7 +21,7 @@ function resizeImages() {
 /** Binds a function to all post previews' DOM mutations.
  * @param {function} func function to be fired when post previews' DOM mutates
  * @returns {void} */
-function bindDOMEvents(func) {
+function bindPreviewEvents(func) {
 	const observer = new MutationObserver(mutations => {
 		mutations.forEach(mutation => func());
 	});
@@ -33,8 +33,8 @@ function bindDOMEvents(func) {
 	};
 
 	[...document.querySelectorAll('div[id^=PreviewDiv_]')]
-		.forEach(element => observer.observe(element, observerConfig));
+		.forEach(div => observer.observe(div, observerConfig));
 }
 
-bindDOMEvents(resizeImages);
+bindPreviewEvents(resizeImages);
 resizeImages();
